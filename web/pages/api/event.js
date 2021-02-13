@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-export default (req, res) => {
+export default async (req, res) => {
   const Pusher = require("pusher");
 
   const pusher = new Pusher({
@@ -11,7 +11,7 @@ export default (req, res) => {
     useTLS: true,
   });
 
-  pusher.trigger("sound-festival", "incoming", {
+  await pusher.trigger("sound-festival", "incoming", {
     sfx: req.query.sfx,
     beat: req.query.beat,
   });
