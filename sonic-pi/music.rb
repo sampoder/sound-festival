@@ -106,25 +106,33 @@ end
 
 # Undefined
 with_fx :band_eq, amp:0.05 do
-  live_loop :synths do
-    use_synth :mod_saw
-    use_synth_defaults amp: 0.5, attack: 0, sustain: 1, release: 0.25, mod_range: 12, mod_phase: 0.5, mod_invert_wave: 1
-    notes = (ring :F, :E, :D, :D, :G, :E, :D, :D)
-    notes.each do |n|
+  use_random_seed 667
+  load_sample :ambi_lunar_land
+  sleep 1
+  live_loop :foo do
+    with_fx :reverb, kill_delay: 0.2, room: 0.3 do
       if(x==2)
-        tick
-        play note(n, octave: 1), cutoff: (line 90, 130, steps: 8).look
-        play note(n, octave: 2), cutoff: (line 90, 130, steps: 16).look
-        
+        4.times do
+          use_random_seed 4000
+          8.times do
+            sleep 0.25
+            play chord(:e3, :m7).choose, release: 0.1, pan: rrand(-1, 1, res: 0.9), amp: 1
+          end
+        end
       end
-      sleep 1
     end
+    sleep 0.25
   end
-  live_loop :snare, delay: 12.5 do
+  live_loop :bar, auto_cue: false do
     if(x==2)
-      sample :drum_snare_soft
+      if rand < 0.5
+        sample :ambi_lunar_land
+        puts :comet_landing
+      end
+      sleep 8
     end
-    sleep 1
+    
+    sleep 0.1
   end
 end
 
@@ -168,7 +176,10 @@ live_loop :effects do
     sample :perc_till
   end
   if(b == 8)
-    sample :ambi_choir
+    with_fx :echo do
+      sample :ambi_choir
+    end
+    
   end
   if(b == 9)
     sample "/Users/sam/Downloads/kahootsfx.flac"
