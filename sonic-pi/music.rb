@@ -29,7 +29,7 @@ live_loop :midi_sync do
 end
 
 # Spooky Background Mood
-with_fx :band_eq, amp:0.1 do
+with_fx :band_eq, amp:0.2 do
   live_loop :haunted do
     if(x==0)
       sample :perc_bell, rate: rrand(1, 1.5)
@@ -60,7 +60,7 @@ end
 # Electric Mood
 
 load_samples :guit_em9, :bd_haus
-with_fx :band_eq, amp:0.02 do
+with_fx :band_eq, amp:0.04 do
   live_loop :low do
     if(x==1)
       tick
@@ -105,7 +105,7 @@ end
 
 
 # Undefined
-with_fx :band_eq, amp:0.05 do
+with_fx :band_eq, amp:0.1 do
   use_random_seed 667
   load_sample :ambi_lunar_land
   sleep 1
@@ -182,7 +182,7 @@ live_loop :effects do
     
   end
   if(b == 9)
-    sample "/Users/sam/Downloads/kahootsfx.flac"
+    sample "/Users/sam/Documents/GitHub/sound-festival/sonic-pi/custom-sounds/kahootsfx.flac "
   end
   if(b == 10)
     sample :guit_e_fifths
@@ -196,4 +196,11 @@ live_loop :effects do
   sleep 1
 end
 
-
+live_loop :voices do
+  time = Time.new
+  if(time.hour != 2 || time.min > 54)
+    sample "/Users/sam/Documents/GitHub/sound-festival/sonic-pi/custom-sounds/#{dice(4)}.flac"
+    sleep 300
+  end
+  sleep 0.25
+end
