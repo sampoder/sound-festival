@@ -13,3 +13,5 @@ Here are some pics:
 | <img src="https://cloud-2bey7giks-hack-club-bot.vercel.app/0img_0107.jpg" height="200px">  | <img src="https://cloud-hhsufmf05-hack-club-bot.vercel.app/0screenshot_2021-02-22_at_11.32.05_am.png" height="200px"> | <img src ="https://cloud-jdsg938hx-hack-club-bot.vercel.app/0image_from_ios__20_.jpg" height="200px"> |
 |---|---|---|
 | Students & a principal trying it out | Curious students reading the music's code  | Addicted students playing the Kahoot sound   |
+
+Thank you to [@zachlatta](https://github.com/zachlatta), [@MatthewStanciu](https://github.com/MatthewStanciu), [@zfogg](https://github.com/zfogg), [@juliegoat](https://github.com/juliegoat) & [@MaxWofford](https://github.com/MaxWofford) for making voiceovers for the festival.
