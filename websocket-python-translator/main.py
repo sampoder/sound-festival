@@ -24,14 +24,18 @@ root.addHandler(ch)
 
 pusher = pysher.Pusher(os.getenv("KEY"), 'us2')
 
-
 def my_func(data, *args, **kwargs):
     y = json.loads(data)
+    global b
+    global x
     try:
-      note_off = [0x90, int(y['sfx']), 1]
+      note_off = [0x90, 100, int(y['sfx'])]
+      b = int(y['sfx'])
       midiout.send_message(note_off)
+      
     except:
-      note_on = [0x90, int(y['beat']), 2]
+      note_on = [0x90, int(y['beat']), 100]
+      x = int(y['beat'])
       midiout.send_message(note_on)
     
     print("processing Args:", args)
