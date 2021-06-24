@@ -1,25 +1,20 @@
 =begin
 
- _       __     __                        
-| |     / /__  / /________  ____ ___  ___ 
-| | /| / / _ \/ / ___/ __ \/ __ `__ \/ _ \
-| |/ |/ /  __/ / /__/ /_/ / / / / / /  __/
-|__/|__/\___/_/\___/\____/_/ /_/ /_/\___/ 
+███████  ██████  ██    ██ ███    ██ ██████                   
+██      ██    ██ ██    ██ ████   ██ ██   ██                  
+███████ ██    ██ ██    ██ ██ ██  ██ ██   ██                  
+     ██ ██    ██ ██    ██ ██  ██ ██ ██   ██                  
+███████  ██████   ██████  ██   ████ ██████                   
+                                                             
 
-  ___           ____                             __  _           
-  / /_____     /  _/___  ____  ____ _   ______ _/ /_(_)___  ____ 
- / __/ __ \    / // __ \/ __ \/ __ \ | / / __ `/ __/ / __ \/ __ \
-/ /_/ /_/ /  _/ // / / / / / / /_/ / |/ / /_/ / /_/ / /_/ / / / /
-\__/\____/  /___/_/ /_/_/ /_/\____/|___/\__,_/\__/_/\____/_/ /_/ 
+███████ ███████ ███████ ████████ ██ ██    ██  █████  ██      
+██      ██      ██         ██    ██ ██    ██ ██   ██ ██      
+█████   █████   ███████    ██    ██ ██    ██ ███████ ██      
+██      ██           ██    ██    ██  ██  ██  ██   ██ ██      
+██      ███████ ███████    ██    ██   ████   ██   ██ ███████ 
+                                                             
 
- _       __          __      ___   ____ ___  ___
-| |     / /__  ___  / /__   |__ \ / __ \__ \<  /
-| | /| / / _ \/ _ \/ //_/   __/ // / / /_/ // / 
-| |/ |/ /  __/  __/ ,<     / __// /_/ / __// /  
-|__/|__/\___/\___/_/|_|   /____/\____/____/_/   
-
-
-Collect your freebies and play some music!
+Join at festival.hackclub.dev!
 
 
 
@@ -157,8 +152,8 @@ with_fx :band_eq, amp:0.1 do
   load_sample :ambi_lunar_land
   sleep 1
   live_loop :foo do
-    with_fx :reverb, kill_delay: 0.2, room: 0.3 do
-      if(get[:x]==2)
+    if(get[:x]==2)
+      with_fx :reverb, kill_delay: 0.2, room: 0.3 do
         4.times do
           use_random_seed 4000
           8.times do
@@ -168,7 +163,7 @@ with_fx :band_eq, amp:0.1 do
         end
       end
     end
-    sleep 0.25
+    sleep 2
   end
   live_loop :bar, auto_cue: false do
     if(get[:x]==2)
@@ -244,7 +239,7 @@ end
 
 live_loop :voices do
   time = Time.new
-  if(time.hour != 2 || time.min > 54)
+  if(false)
     sample "/Users/sam/Documents/GitHub/sound-festival/sonic-pi/custom-sounds/#{dice(5)}.flac"
     sleep 60
   end
