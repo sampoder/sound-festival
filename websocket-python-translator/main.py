@@ -22,7 +22,7 @@ root.setLevel(logging.INFO)
 ch = logging.StreamHandler(sys.stdout)
 root.addHandler(ch)
 
-pusher = pysher.Pusher(os.getenv("KEY"), 'us2')
+pusher = pysher.Pusher(os.getenv("KEY"), cluster='us2')
 
 def my_func(data, *args, **kwargs):
     y = json.loads(data)
