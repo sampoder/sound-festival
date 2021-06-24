@@ -118,7 +118,7 @@ export default function Home() {
               justifyItems: ["flex-start", "flex-end"],
             }}
           >
-            <Button sx={{ bg: "red" }} as="a" href="https://www.twitch.tv/hackclubhq">Watch Live</Button>
+            <Button sx={{ bg: "muted" }} as="a" href="https://www.twitch.tv/hackclubhq">No Longer Live</Button>
             <Button sx={{ bg: "blue", ml: "6px" }} as="a" href="https://github.com/sampoder">GitHub</Button>
           </Box>
         </Grid>
